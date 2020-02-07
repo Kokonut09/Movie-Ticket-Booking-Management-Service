@@ -1,7 +1,6 @@
 package database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.*;
 
 /*
  * https://www.youtube.com/watch?v=KRhv4iPgzHE
@@ -11,15 +10,29 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		getConnection();
+		createTable();
+		
+	}
+	
+	
+	
+	public static void createTable() throws Exception{
+		try {
+			
+			Connection con = getConnection();
+			PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS tablename(id in NOT NULL AUTO_INCREMENT, first varchar(255), last varchar(255), PRIMARY KEY(id))");
+			create.executeUpdate();
+						
+		}catch (Exception e) {System.out.println(e);}
+		finally{System.out.println("function complete.");}
 		
 	}
 	
 	public static Connection getConnection() throws Exception{
 		try {
-			String driver = "com.mysql.jdbc.Driver";
-			String url = "jdbc:mysql://localhost:3306/database";
-			String username = "hey";
+			String driver = "com.mysql.cj.jdbc.Driver";
+			String url = "jdbc:mysql://localhost:3306/demo";
+			String username = "javadata";
 			String password = "mypass";
 			Class.forName(driver);
 			
@@ -28,9 +41,7 @@ public class Main {
 			return conn;
 			
 		}catch(Exception e) {System.out.println(e);}
-		
-		
-		
+				
 		return null;
 	}
 
