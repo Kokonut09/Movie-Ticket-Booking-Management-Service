@@ -1,5 +1,6 @@
 package database;
 
+import java.awt.Window;
 import java.sql.*;
 
 public class Driver {
@@ -18,6 +19,7 @@ public class Driver {
 			while (myRs.next()) {
 				System.out.println(myRs.getString("last_name") + ", " + myRs.getString("first_name"));;
 				
+			
 			}
 			
 		}catch (Exception e){
