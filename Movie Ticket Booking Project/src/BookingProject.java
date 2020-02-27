@@ -13,11 +13,15 @@ public class BookingProject {
 		
 		
 		Menus.mainMenu();
+		Menus.mainMenu(getChoice());
+		
+		
+		
 		
 		//getChoice();
 
-		Menus.movies();
-		Menus.upcomingMovies();
+		//Menus.movies();
+		//Menus.upcomingMovies();
 		
 		//Driver.getName();
 	}
@@ -30,6 +34,7 @@ public class BookingProject {
 	public static int getChoice() {
 		Scanner scanner = new Scanner(System.in);
 		
+		System.out.println("Make a selection");
 		return scanner.nextInt();
 		
 	}

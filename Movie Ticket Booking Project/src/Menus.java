@@ -18,7 +18,37 @@ public class Menus {
 		System.out.println("|  4. View Upcoming Movies                           |");
 		System.out.println("|  5. Exit                                           |");
 		System.out.println("+====================================================+");
+
 	}
+	public static void mainMenu(int selection) {
+
+		switch(selection){
+
+		case 1:			
+
+			movies();
+			movies(BookingProject.getChoice());
+			break;	
+
+		case 2:
+			//Book your tickets
+			break;
+
+		case 3:			
+			//Review bookings
+			break;	
+
+		case 4:
+			upcomingMovies();
+			upcomingMovies(BookingProject.getChoice());
+			break;
+
+		case 5:			
+			System.exit(0);
+
+		}
+	}
+
 
 	public static void movies() {
 		System.out.println("+====================================================+");
@@ -32,6 +62,16 @@ public class Menus {
 		System.out.println("|  1. Back to main menu                              |");
 		System.out.println("+====================================================+");		
 	}
+	public static void movies(int selection) {
+
+		switch(selection){
+
+		case 1: mainMenu();
+		mainMenu(BookingProject.getChoice());
+		break;
+
+		}
+	}
 
 	public static void upcomingMovies() {
 		System.out.println("+====================================================+");
@@ -44,5 +84,15 @@ public class Menus {
 		System.out.println("|                                                    |");
 		System.out.println("|  1. Back to main menu                              |");
 		System.out.println("+====================================================+");
+	}
+
+	public static void upcomingMovies(int selection) {
+		switch(selection){
+
+		case 1: mainMenu();
+		mainMenu(BookingProject.getChoice());
+		break;
+
+		}
 	}
 }
