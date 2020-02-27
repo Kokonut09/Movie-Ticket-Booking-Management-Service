@@ -17,7 +17,6 @@ public class BookingProject {
 		
 		
 		
-		
 		//getChoice();
 
 		//Menus.movies();
