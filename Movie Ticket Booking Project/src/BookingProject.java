@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 import database.Driver;
 
 /**
@@ -13,9 +11,7 @@ public class BookingProject {
 		
 		
 		Menus.mainMenu();
-		Menus.mainMenu(getChoice());
-		
-		
+	
 		
 		//getChoice();
 
@@ -30,12 +26,6 @@ public class BookingProject {
 	 * 
 	 * @return int of user's selection
 	 */
-	public static int getChoice() {
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("Make a selection");
-		return scanner.nextInt();
-		
-	}
+	
 
 }

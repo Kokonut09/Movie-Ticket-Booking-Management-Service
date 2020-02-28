@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 
 public class Menus {
 
@@ -6,8 +6,9 @@ public class Menus {
 	/** Prints the Main Menu
 	 * 
 	 */
+	
 	public static void mainMenu() {
-
+		
 		System.out.println("+====================================================+");
 		System.out.println("|                    Main Menu                       |");
 		System.out.println("|====================================================|");
@@ -19,15 +20,13 @@ public class Menus {
 		System.out.println("|  5. Exit                                           |");
 		System.out.println("+====================================================+");
 
-	}
-	public static void mainMenu(int selection) {
-
+		int selection = getChoice();
+		
 		switch(selection){
 
 		case 1:			
 
 			movies();
-			movies(BookingProject.getChoice());
 			break;	
 
 		case 2:
@@ -39,8 +38,8 @@ public class Menus {
 			break;	
 
 		case 4:
+		
 			upcomingMovies();
-			upcomingMovies(BookingProject.getChoice());
 			break;
 
 		case 5:			
@@ -60,20 +59,24 @@ public class Menus {
 		System.out.println("|  Weathering with You | PG-13 | 1h 51m |            |");
 		System.out.println("|                                                    |");
 		System.out.println("|  1. Back to main menu                              |");
-		System.out.println("+====================================================+");		
-	}
-	public static void movies(int selection) {
-
+		System.out.println("+====================================================+");	
+		
+		int selection = getChoice();
+		
 		switch(selection){
 
 		case 1: mainMenu();
-		mainMenu(BookingProject.getChoice());
+		mainMenu();
 		break;
 
 		}
 	}
 
+
+
+
 	public static void upcomingMovies() {
+		
 		System.out.println("+====================================================+");
 		System.out.println("|                  Upcoming Movies                   |");
 		System.out.println("|====================================================|");
@@ -84,15 +87,23 @@ public class Menus {
 		System.out.println("|                                                    |");
 		System.out.println("|  1. Back to main menu                              |");
 		System.out.println("+====================================================+");
-	}
-
-	public static void upcomingMovies(int selection) {
+		
+		int selection = getChoice();
 		switch(selection){
 
 		case 1: mainMenu();
-		mainMenu(BookingProject.getChoice());
+		mainMenu();
 		break;
 
 		}
+	
+	}
+	
+	public static int getChoice() {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Make a selection");
+		return scanner.nextInt();
+		
 	}
 }
